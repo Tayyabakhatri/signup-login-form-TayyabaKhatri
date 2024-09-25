@@ -43,32 +43,48 @@ login && login.addEventListener('click', function () {
     var users = JSON.parse(localStorage.getItem("usersData")) //array of object
     var loginEmail = document.getElementById("form3Example3")
     var loginPass = document.getElementById("form3Example4")
+    var userFound = false
     for (var user of users) {
-        if (user.emailAddress == loginEmail.value) {
-
-            if (user.password == loginPass.value) {
-                if (user.emailAddress == loginEmail.value && user.password == loginPass.value) {
-                    console.log("login successfully")
-                } else {
-                    console.log("ligin failed")
-                }
-
-            } else {
-                console.log("emailis incorrect")
-            }
-        } else {
-            console.log("passward is incorrect")
+        if (user.emailAddress == loginEmail.value && user.password == loginPass.value) {
+            swal({
+                title: "Sweet!",
+                text: "welcom" + user.name + "login successfully",
+                imageUrl: "images/thumbs-up.jpg"
+            });
+            userFound = true
+            break;
         }
     }
+    if (!userFound) {
+        swal({
+            title: "Sweet!",
+            imageUrl: "images/360_F_489394725_Oox6jg48u2K0FSk4RlPCzqkU7Qvu2BSu.jpg",
+            text: "welcome new user",
+            timer: 4000
+        });
 
-    //     var userFound=users.find(user=> user.emailAddress===loginEmail.value&&user.password===loginPass.value)
-    //     if(userFound){
-    //         alert("welcome" +userFound.firstName+" !")
-    //     }else{
-    // alert("error")
+    }
+
+    // for (var user of users) {
+    //     if (user.emailAddress == loginEmail.value && user.password == loginPass.value) {
+    //         swal({
+    //             title: "Sweet!",
+    //             text: "login successfully",
+    //             imageUrl: "images/thumbs-up.jpg"
+    //         });
+
+    //     } else {
+    //         if(user.emailAddress != loginEmail.value && user.password != loginPass.value){
+    //             swal({
+
+    //                 text: "welcome" + user.name,
+    //                 timer: 2000
+    //             });
+    //         }
+
     //     }
+    // }
+
 })
-
-
 
 
