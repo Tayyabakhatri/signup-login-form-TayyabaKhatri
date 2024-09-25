@@ -1,0 +1,36 @@
+/* login form css */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+/* login form css finish */
+body{
+    background-image: url(images/71+17bVYHxL._AC_UF1000\,1000_QL80_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*sign in form*/
+#card{
+    background-color: #ebe6e394;
+    border: none;
+}
+#phoneNum,#emailAddress,#password,#birthdayDate,#lastName,#firstName,#form3Example3,#form3Example4{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.678);
+}
+#image{
+    width: 200px;
+    
+}
